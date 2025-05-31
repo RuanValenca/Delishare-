@@ -13,14 +13,15 @@ declare module "styled-components" {
         default: string;
         dark: string;
       };
-
+      gradientBackgroundLight: string;
+      gradientBackground: string;
       background: string;
       foreground: string;
       primary: string;
       secondary: string;
       muted: string;
       border: string;
-      danger: string;
+      error: string;
       white1: string;
       white2: string;
       white3: string;
@@ -38,12 +39,15 @@ declare module "styled-components" {
         text4Xl: string;
       };
       weight: {
+        light: string;
         normal: string;
         medium: string;
         semibold: string;
         bold: string;
       };
       colors: {
+        error: string;
+        linkBlue: string;
         mainText: string;
         secondaryText: string;
         gradientText: string;

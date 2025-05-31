@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { ReactNode } from "react";
-import { Eye, EyeClosed } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
 import { ErrorMessage } from "formik";
 
 import * as S from "./styles";
@@ -18,7 +18,6 @@ interface Props {
     | "password"
     | "select"
     | "string"
-    | "email"
     | "number"
     | "date"
     | "checkbox";
@@ -78,10 +77,9 @@ interface Props {
   options?: IFormOptions[];
   disabled?: boolean;
   checked?: boolean;
-  leftLabel?: boolean;
+  labelPosition?: "top" | "left";
   notLimitHeight?: boolean;
   value?: string | number;
-  mask?: string;
   cols?: number;
   className?: string;
   bgColor?: string;
@@ -105,12 +103,11 @@ export default function FieldFormik({
   options,
   disabled,
   value,
-  mask,
   checked,
   className,
   notLimitHeight = false,
   bgColor,
-  leftLabel,
+  labelPosition,
   leftIconBgColor,
   labelSize = "fullWidth",
   padding,
@@ -187,7 +184,7 @@ export default function FieldFormik({
           value={value && value}
         />
         <S.EyeIcon onClick={() => setVisible(!visible)}>
-          {visible ? <Eye /> : <EyeClosed />}
+          {visible ? <Eye /> : <EyeOff />}
         </S.EyeIcon>
       </>
     );
@@ -196,7 +193,7 @@ export default function FieldFormik({
   function renderString() {
     return (
       <>
-        <S.MaskedField
+        <S.StyledField
           placeholder={placeholder}
           bgColor={bgColor}
           align={align}
@@ -209,7 +206,6 @@ export default function FieldFormik({
           onClick={onClick}
           disabled={disabled}
           value={value && value}
-          mask={mask!}
         />
       </>
     );
@@ -238,7 +234,7 @@ export default function FieldFormik({
   function renderNumber() {
     return (
       <>
-        <S.MaskedField
+        <S.StyledField
           placeholder={placeholder}
           bgColor={bgColor}
           align={align}
@@ -251,7 +247,6 @@ export default function FieldFormik({
           onClick={onClick}
           disabled={disabled}
           value={value && value}
-          mask={mask!}
         />
       </>
     );
@@ -335,7 +330,6 @@ export default function FieldFormik({
   const typeRender = {
     date: renderDate(),
     textarea: renderText(),
-    email: renderString(),
     string: renderString(),
     number: renderNumber(),
     select: renderSelect(),
@@ -347,7 +341,7 @@ export default function FieldFormik({
     <S.Container
       style={{ ...sizeWidth[widthSize] }}
       className={className}
-      leftLabel={leftLabel}
+      labelPosition={labelPosition}
     >
       {label && (
         <label

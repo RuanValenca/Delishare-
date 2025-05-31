@@ -1,23 +1,27 @@
 import styled, { css } from "styled-components";
-import InputMask from "react-input-mask";
 
 interface PropsContainer {
-  leftLabel?: boolean;
+  labelPosition?: "top" | "left";
 }
 export const Container = styled.div<PropsContainer>`
   display: flex;
-  flex-direction: ${({ leftLabel }) => (leftLabel ? "row" : "column")};
-  align-items: ${({ leftLabel }) => (leftLabel ? "baseline" : "unset")};
-  gap: ${({ leftLabel }) => (leftLabel ? "0.5rem" : "none")};
+  flex-direction: ${({ labelPosition }) =>
+    labelPosition == "left" ? "row" : "column"};
+  align-items: ${({ labelPosition }) =>
+    labelPosition == "left" ? "baseline" : "unset"};
+  text-align: ${({ labelPosition }) =>
+    labelPosition == "left" ? "left" : "left"};
+  padding: ${({ labelPosition }) =>
+    labelPosition == "left" ? "0 0" : "0.8rem 0"};
 
   label {
     color: ${({ theme }) => theme.font.colors.mainText};
-    padding-bottom: 0.8rem;
+    padding-bottom: 0.3rem;
   }
 `;
 
 export const StyledError = styled.p`
-  color: red;
+  color: ${({ theme }) => theme.font.colors.error};
 `;
 
 interface IInputContainer {
@@ -52,11 +56,6 @@ export const LeftBackground = styled.div<ILeftBackgroundProps>`
   bottom: 0;
   width: 3rem;
   z-index: 1;
-
-  background-color: ${({ theme }) => theme.colors?.background};
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  box-shadow: inset 0px 3px 6px #00000029;
 `;
 
 interface IStyledField {
@@ -92,22 +91,6 @@ const commonStyles = css<IStyledField>`
   &::-webkit-calendar-picker-indicator {
     cursor: pointer;
   }
-`;
-
-export const MaskedField = styled(InputMask)<IStyledField>`
-  ${commonStyles}
-  /* Estilos para remover as setas do input number */
-  /* Chrome, Safari, Edge, Opera */
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  /* Firefox */
-  &[type="number"] {
-    appearance: textfield;
-  }
-  appearance: none;
 `;
 
 export const StyledField = styled.input.withConfig({
@@ -283,9 +266,10 @@ export const EyeIcon = styled.div`
   position: absolute;
   right: 2rem;
   top: 50%;
-  transform: translateY(-50%);
+  width: fit-content;
+  transform: translateY(-35%) scale(0.8);
   cursor: pointer;
-  color: ${({ theme }) => theme.font.colors?.mainText};
+  color: ${({ theme }) => theme.font.colors.secondaryText};
 `;
 
 export const DownIcon = styled.div`
