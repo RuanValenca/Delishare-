@@ -47,8 +47,9 @@ declare module "styled-components" {
       };
       colors: {
         error: string;
-        linkBlue: string;
+        lightBlue: string;
         mainText: string;
+        DarkBlue: string;
         secondaryText: string;
         gradientText: string;
         whiteText: string;

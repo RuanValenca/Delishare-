@@ -44,8 +44,9 @@ const theme = {
     },
     colors: {
       error: "#EF4444",
-      linkBlue: "#0EA5E9",
+      lightBlue: "#0EA5E9",
       mainText: "#0F172A",
+      DarkBlue: "#0369A1",
       secondaryText: "#64748B",
       gradientText: "linear-gradient(to right, #0EA5E9, #4ADE80)",
       whiteText: "#FFFFFF",

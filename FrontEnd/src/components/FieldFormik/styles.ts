@@ -37,7 +37,8 @@ export const InputContainer = styled.div.withConfig({
   border-radius: 10px;
   height: ${(props) => props.sizeHeight};
 
-  background-color: ${({ theme }) => theme.colors?.background};
+  background-color: ${({ bgColor, theme }) =>
+    bgColor ?? theme.colors?.background};
 `;
 
 interface ILeftBackgroundProps {
@@ -105,11 +106,18 @@ export const StyledField = styled.input.withConfig({
     -webkit-appearance: none;
     margin: 0;
   }
+  background-color: ${({ bgColor, theme }) =>
+    bgColor ?? theme.colors.background};
   /* Firefox */
   &[type="number"] {
     appearance: textfield;
   }
   appearance: none;
+
+  &::placeholder {
+    backdrop-filter: blur(15px);
+    color: ${({ theme }) => theme.font.colors.muted};
+  }
 `;
 
 interface IInputStyledFieldText {

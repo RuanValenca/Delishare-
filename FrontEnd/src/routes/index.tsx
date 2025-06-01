@@ -2,12 +2,14 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "../features/login/LoginPage";
 import MainLayout from "../layouts/MainLayout";
 import HomePage from "../features/home/HomePage";
+import DelishareMenu from "../features/DelishareMenu";
 
 export default function AppRoutes() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/*" element={<Navigate to="/Delishare" replace />} />
+        <Route path="/Delishare" element={<DelishareMenu />} />
         <Route path={"/login"} element={<LoginPage />} />
 
         <Route element={<MainLayout />}>

@@ -55,7 +55,7 @@ export const BottomForm = styled.div`
 export const A = styled.a`
   cursor: pointer;
   font-weight: ${({ theme }) => theme.font.weight.light};
-  color: ${({ theme }) => theme.font.colors.linkBlue};
+  color: ${({ theme }) => theme.font.colors.lightBlue};
   font-size: ${({ theme }) => theme.font.size.textSm};
 `;
 
