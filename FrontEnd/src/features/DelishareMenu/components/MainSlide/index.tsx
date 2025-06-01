@@ -3,6 +3,7 @@ import { useTheme } from "styled-components";
 import FieldFormik from "../../../../components/FieldFormik";
 import { Formik } from "formik";
 import BasicButton from "../../../../components/BasicButton";
+import { ChefHat } from "lucide-react";
 export default function MainSlide() {
   const theme = useTheme();
 
@@ -20,6 +21,7 @@ export default function MainSlide() {
 
         <Formik initialValues={initialValues} onSubmit={() => {}}>
           <FieldFormik
+            color={theme.font.colors.whiteText}
             heightSize="small"
             bgColor={theme.colors.white3}
             name="search"
@@ -38,7 +40,10 @@ export default function MainSlide() {
       </S.DivText>
 
       <S.DivImage>
-        <S.Img></S.Img>
+        <S.Img src="src\assets\img\FotoAlimento.jpg" alt="AlimentoSlide" />
+        <S.Icon>
+          <ChefHat size={45} color={theme.font.colors.lightBlue} />
+        </S.Icon>
       </S.DivImage>
     </S.Container>
   );

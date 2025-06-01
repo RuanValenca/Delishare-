@@ -26,4 +26,6 @@ export const DivLink = styled.div`
   gap: 1rem;
 `;
 
-export const P = styled.p``;
+export const P = styled.p`
+  cursor: pointer;
+`;

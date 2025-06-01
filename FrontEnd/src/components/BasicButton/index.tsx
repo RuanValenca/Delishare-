@@ -16,7 +16,7 @@ export default function Button({
   textColor,
   font = "medium",
   width = "medium",
-  bgColor = "#0070f3", // valor default (ex: azul)
+  bgColor = "#0070f3",
   disabled = false,
   onClick,
 }: ButtonProps) {

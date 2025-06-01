@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.nav`
   background: ${({ theme }) => theme.colors.gradientBackground};
   color: ${({ theme }) => theme.font.colors.whiteText};
-  padding: 3rem 8rem 3rem 4rem;
+  padding: 3rem 6rem 3rem 4rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 80vh;
@@ -30,16 +30,29 @@ export const Description = styled.p`
 `;
 
 export const DivImage = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
-  padding-left: 4rem;
 `;
 
 export const Img = styled.img`
   border-radius: 12px;
-  width: 90%;
-  height: 70%;
-  border: 1px solid red;
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+`;
+
+export const Icon = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  right: -20px;
+  bottom: 0;
+  position: absolute;
+  border-radius: 12px;
+  width: fit-content;
+  height: fit-content;
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 export const P = styled.p``;

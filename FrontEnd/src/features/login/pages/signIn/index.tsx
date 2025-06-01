@@ -51,7 +51,12 @@ export default function SignIn() {
         </S.Form>
       </Formik>
       <S.Footer>
-        <BasicButton font="small" width="fullWidth" variant="gradient">
+        <BasicButton
+          textColor={theme.font.colors.whiteText}
+          bgColor={theme.colors.gradientBackground}
+          font="small"
+          width="fullWidth"
+        >
           Entrar
         </BasicButton>
         <S.P>

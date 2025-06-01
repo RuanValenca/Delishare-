@@ -22,6 +22,7 @@ const theme = {
     white1: "#FFFFFFB3",
     white2: "#FFFFFF4D",
     white3: "#FFFFFF33",
+    shadow: "#00000033",
   },
 
   font: {

@@ -1,7 +1,5 @@
-// src/components/Button/styles.ts
 import styled from "styled-components";
 import theme from "../../styles/theme";
-
 interface ButtonStyledProps {
   font: "xsmall" | "small" | "medium" | "large" | "xlarge";
   width: "small" | "medium" | "large" | "fullWidth";
@@ -11,11 +9,11 @@ interface ButtonStyledProps {
 }
 
 const fontSizes: Record<ButtonStyledProps["font"], string> = {
-  xsmall: theme.font.size.textXs, // ex: "0.75rem"
-  small: theme.font.size.textSm, // ex: "0.875rem"
-  medium: theme.font.size.textBase, // ex: "1rem"
-  large: theme.font.size.textLg, // ex: "1.125rem"
-  xlarge: theme.font.size.textXl, // ex: "1.25rem"
+  xsmall: theme.font.size.textXs,
+  small: theme.font.size.textSm,
+  medium: theme.font.size.textBase,
+  large: theme.font.size.textLg,
+  xlarge: theme.font.size.textXl,
 };
 
 const widths: Record<ButtonStyledProps["width"], string> = {
@@ -42,14 +40,17 @@ export const Button = styled.button<ButtonStyledProps>`
   font-size: ${({ font }) => fontSizes[font]};
   width: ${({ width }) => widths[width]};
   padding: ${({ width }) => paddings[width]};
-
-  background-color: ${({ bgColor }) => bgColor};
+  background: ${({ bgColor }) => bgColor};
   color: ${({ textColor }) => textColor};
-
   border: none;
-
+  transition: transform 0.05s linear;
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
+    animation: none;
+  }
+
+  &:active {
+    transform: scale(0.99);
   }
 `;

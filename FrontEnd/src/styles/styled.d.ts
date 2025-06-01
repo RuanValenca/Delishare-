@@ -25,6 +25,7 @@ declare module "styled-components" {
       white1: string;
       white2: string;
       white3: string;
+      shadow: string;
     };
 
     font: {

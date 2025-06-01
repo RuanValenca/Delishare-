@@ -13,6 +13,7 @@ export interface IFormOptions {
 
 interface Props {
   name: string;
+  color?: string;
   type:
     | "textarea"
     | "password"
@@ -89,6 +90,7 @@ interface Props {
 
 export default function FieldFormik({
   name,
+  color,
   type,
   error,
   align = "start",
@@ -194,6 +196,7 @@ export default function FieldFormik({
     return (
       <>
         <S.StyledField
+          color={color}
           placeholder={placeholder}
           bgColor={bgColor}
           align={align}

@@ -106,6 +106,7 @@ export const StyledField = styled.input.withConfig({
     -webkit-appearance: none;
     margin: 0;
   }
+  color: ${({ color, theme }) => color ?? theme.font.colors.mainText};
   background-color: ${({ bgColor, theme }) =>
     bgColor ?? theme.colors.background};
   /* Firefox */
