@@ -27,6 +27,8 @@ export default function About() {
           <S.Img src="src\assets\img\programming.jpg" alt="Code" />
         </S.DivImage>
       </S.DivInfo>
+
+      {/*Adicionar Tecnologias*/}
     </S.Container>
   );
 }
