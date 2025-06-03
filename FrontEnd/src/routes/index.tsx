@@ -14,7 +14,6 @@ export default function AppRoutes() {
 
         <Route element={<MainLayout />}>
           <Route path="/Delishare" element={<DelishareMenu />} />
-
           <Route path="/sobre" element={<About />} />
         </Route>
       </Routes>

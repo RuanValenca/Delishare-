@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.nav`
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
-  display: grid;
 `;
 
 export const DivInfo = styled.div`
@@ -61,4 +62,12 @@ export const Img = styled.img`
   height: 100%;
   object-fit: cover;
   box-shadow: 0px 6px 15px ${({ theme }) => theme.colors.shadow};
+`;
+
+export const Tech = styled.div`
+  padding: 0rem 4rem 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 `;
