@@ -34,19 +34,26 @@ export default function About() {
       </S.DivInfo>
 
       <S.Tech>
+        <S.TitleTech>Tecnologias</S.TitleTech>
+        <S.DescriptionTech>
+          "As engrenagens por trás do que você vê funcionando aqui."
+        </S.DescriptionTech>
         <CardInfo
+          IconColor={theme.colors.blueSchema.dark}
           bgColor={theme.colors.blueSchema.light}
           icon={<FaReact />}
           name="React"
           description="Uma biblioteca JavaScript para construir interfaces de usuário modernas, reativas e componentizadas. Ideal para criar experiências interativas no frontend."
         />
         <CardInfo
+          IconColor={theme.colors.blueSchema.dark}
           bgColor={theme.colors.blueSchema.light}
           icon={<SiTypescript />}
           name="TypeScript"
           description="Uma extensão do JavaScript com tipagem estática. Traz mais segurança e previsibilidade ao código, ajudando a evitar erros comuns durante o desenvolvimento."
         />
         <CardInfo
+          IconColor={theme.colors.blueSchema.dark}
           bgColor={theme.colors.blueSchema.light}
           icon={<FaPhp />}
           name="PHP"

@@ -65,9 +65,24 @@ export const Img = styled.img`
 `;
 
 export const Tech = styled.div`
-  padding: 0rem 4rem 2rem;
+  padding: 4rem;
+  width: 100%;
+  height: 90vh;
+  text-align: center;
+  background: ${({ theme }) => theme.colors.greenSchema.light};
   display: grid;
-  gap: 2rem;
-  grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+`;
+
+export const TitleTech = styled.h2`
+  color: ${({ theme }) => theme.font.colors.DarkBlue};
+  font-size: ${({ theme }) => theme.font.size.text3Xl};
+  grid-column: span 3;
+`;
+
+export const DescriptionTech = styled.h2`
+  color: ${({ theme }) => theme.font.colors.secondaryText};
+  font-size: ${({ theme }) => theme.font.size.textSm};
+  grid-column: span 3;
 `;

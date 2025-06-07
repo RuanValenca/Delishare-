@@ -1,8 +1,10 @@
 import { ChefHat } from "lucide-react";
 import * as S from "./styles";
 import { useTheme } from "styled-components";
+import { useNavigate } from "react-router-dom";
 export default function MainRecipes() {
   const theme = useTheme();
+  const navigate = useNavigate();
   return (
     <S.Container>
       <S.Grid>
@@ -16,10 +18,10 @@ export default function MainRecipes() {
         <S.DivLinks>
           <S.Title>Links</S.Title>
           <S.List>
-            <S.Li>Home</S.Li>
+            <S.Li onClick={() => navigate("/Delishare")}>Home</S.Li>
             <S.Li>Receitas</S.Li>
             <S.Li>Categorias</S.Li>
-            <S.Li>Sobre</S.Li>
+            <S.Li onClick={() => navigate("/sobre")}>Sobre</S.Li>
           </S.List>
         </S.DivLinks>
         <S.DivLinks>
