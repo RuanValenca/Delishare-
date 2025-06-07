@@ -30,6 +30,7 @@ export default function MainSlide() {
           />
         </Formik>
         <BasicButton
+          height="medium"
           bgColor={theme.colors.background}
           font="medium"
           width="large"

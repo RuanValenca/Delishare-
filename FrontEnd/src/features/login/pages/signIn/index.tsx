@@ -52,6 +52,7 @@ export default function SignIn() {
       </Formik>
       <S.Footer>
         <BasicButton
+          height="small"
           textColor={theme.font.colors.whiteText}
           bgColor={theme.colors.gradientBackground}
           font="small"

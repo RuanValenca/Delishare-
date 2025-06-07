@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function NavBar() {
   const theme = useTheme();
   const navigate = useNavigate();
+
   return (
     <S.Container>
       <S.DivName>
@@ -17,7 +18,8 @@ export default function NavBar() {
         <S.P onClick={() => navigate("/Delishare")}>Home</S.P>
         <S.P>Receitas</S.P>
         <S.P>Categorias</S.P>
-        <S.P onClick={() => navigate("/sobre")}>Sobre</S.P>
+        <S.P onClick={() => navigate("/about")}>Sobre</S.P>
+        <S.SettingIcon onClick={() => navigate("/settings")} />
       </S.DivLink>
     </S.Container>
   );

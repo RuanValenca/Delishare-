@@ -21,7 +21,7 @@ export default function MainRecipes() {
             <S.Li onClick={() => navigate("/Delishare")}>Home</S.Li>
             <S.Li>Receitas</S.Li>
             <S.Li>Categorias</S.Li>
-            <S.Li onClick={() => navigate("/sobre")}>Sobre</S.Li>
+            <S.Li onClick={() => navigate("/about")}>Sobre</S.Li>
           </S.List>
         </S.DivLinks>
         <S.DivLinks>

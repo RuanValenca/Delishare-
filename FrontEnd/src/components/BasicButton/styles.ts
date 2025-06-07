@@ -1,10 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme from "../../styles/theme";
+import type { ReactNode } from "react";
 interface ButtonStyledProps {
+  icon?: ReactNode;
+  iconColorHover?: ReactNode;
+  children?: ReactNode;
+  textColor: string;
   font: "xsmall" | "small" | "medium" | "large" | "xlarge";
   width: "small" | "medium" | "large" | "fullWidth";
+  height: "small" | "medium" | "large" | "fullWidth";
   bgColor: string;
-  textColor: string;
+  bgColorHover?: string;
+  borderColor?: boolean;
   disabled?: boolean;
 }
 
@@ -20,6 +27,13 @@ const widths: Record<ButtonStyledProps["width"], string> = {
   small: "5rem",
   medium: "8rem",
   large: "15rem",
+  fullWidth: "100%",
+};
+
+const heights: Record<ButtonStyledProps["width"], string> = {
+  small: "2rem",
+  medium: "3rem",
+  large: "5rem",
   fullWidth: "100%",
 };
 
@@ -39,11 +53,17 @@ export const Button = styled.button<ButtonStyledProps>`
   font-weight: ${({ theme }) => theme.font.weight.bold};
   font-size: ${({ font }) => fontSizes[font]};
   width: ${({ width }) => widths[width]};
+  height: ${({ height }) => heights[height]};
   padding: ${({ width }) => paddings[width]};
+  border: 1px solid
+    ${({ borderColor, theme }) =>
+      borderColor ? theme.colors.border : "transparent"};
   background: ${({ bgColor }) => bgColor};
   color: ${({ textColor }) => textColor};
-  border: none;
-  transition: transform 0.05s linear;
+  transition:
+    transform 0.05s linear,
+    background-color 0.3s ease;
+  gap: 2rem;
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
@@ -53,4 +73,20 @@ export const Button = styled.button<ButtonStyledProps>`
   &:active {
     transform: scale(0.99);
   }
+
+  ${({ bgColorHover, theme }) =>
+    bgColorHover &&
+    css`
+      &:hover {
+        background-color: ${bgColorHover};
+
+        svg {
+          color: ${bgColorHover === theme.colors.blueSchema.light
+            ? theme.colors.blueSchema.dark
+            : bgColorHover === theme.colors.greenSchema.light
+              ? theme.colors.greenSchema.dark
+              : "inherit"};
+        }
+      }
+    `}
 `;
