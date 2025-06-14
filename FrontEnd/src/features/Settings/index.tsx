@@ -2,7 +2,7 @@ import * as S from "./styles";
 import BasicButton from "../../components/BasicButton";
 import FieldFormik from "../../components/FieldFormik";
 import { Formik } from "formik";
-import { ArrowLeft, Save } from "lucide-react";
+import { ArrowLeft, Camera, Save } from "lucide-react";
 import { useTheme } from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -42,8 +42,11 @@ export default function Settings() {
           <S.DivImage>
             <S.Img
               src="https://avatars.githubusercontent.com/u/123456789?v=4"
-              alt="Profile"
+              alt="AlimentoSlide"
             />
+            <S.Icon>
+              <Camera size={20} color={theme.font.colors.mainText} />
+            </S.Icon>
           </S.DivImage>
           <S.Form>
             <Formik initialValues={initialValues} onSubmit={() => {}}>

@@ -1,7 +1,9 @@
 import * as S from "./styles";
 import CardRecipe from "../../../../components/CardRecipe";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 export default function MainRecipes() {
+  const navigate = useNavigate();
   return (
     <S.Container>
       <S.DivText>
@@ -42,7 +44,7 @@ export default function MainRecipes() {
           name="Torrada de Abacate com Ovos Pochê"
         />
       </S.DivCard>
-      <S.Link>
+      <S.Link onClick={() => navigate("/recipes")}>
         Ver todas Receitas <ArrowRight size={20} />
       </S.Link>
     </S.Container>

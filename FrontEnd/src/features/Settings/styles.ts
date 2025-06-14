@@ -64,20 +64,42 @@ export const Info = styled.div`
 
 export const DivImage = styled.div`
   margin: auto;
-  overflow: hidden;
   border-radius: 50%;
   width: 10%;
   position: relative;
   display: flex;
   align-items: center;
+  border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
 export const Img = styled.img`
-  border-radius: 12px;
+  cursor: pointer;
+  border-radius: 50%;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   box-shadow: 0px 6px 15px ${({ theme }) => theme.colors.shadow};
+  transition: filter 0.1s ease-in-out;
+  &:hover {
+    filter: brightness(0.9);
+  }
+`;
+
+export const Icon = styled.div`
+  cursor: pointer;
+  display: flex;
+  padding: 0.3rem;
+  right: -20px;
+  bottom: 0;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 50%;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.background};
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.greenSchema.light};
+  }
 `;
 
 export const Form = styled.div``;

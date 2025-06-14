@@ -23,7 +23,7 @@ export const Phrase = styled.h1`
 `;
 
 export const Description = styled.p`
-  width: 100%;
+  width: 90%;
   height: fit-content;
   font-size: ${({ theme }) => theme.font.size.textXl};
   font-weight: ${({ theme }) => theme.font.weight.normal};

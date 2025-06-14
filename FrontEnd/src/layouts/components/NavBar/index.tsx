@@ -16,8 +16,8 @@ export default function NavBar() {
 
       <S.DivLink>
         <S.P onClick={() => navigate("/Delishare")}>Home</S.P>
+        <S.P>Feed</S.P>
         <S.P>Receitas</S.P>
-        <S.P>Categorias</S.P>
         <S.P onClick={() => navigate("/about")}>Sobre</S.P>
         <S.SettingIcon onClick={() => navigate("/settings")} />
       </S.DivLink>
