@@ -13,6 +13,7 @@ interface ButtonStyledProps {
   bgColorHover?: string;
   borderColor?: boolean;
   disabled?: boolean;
+  gap?: string;
 }
 
 const fontSizes: Record<ButtonStyledProps["font"], string> = {
@@ -63,7 +64,7 @@ export const Button = styled.button<ButtonStyledProps>`
   transition:
     transform 0.05s linear,
     background-color 0.3s ease;
-  gap: 2rem;
+  gap: ${({ gap }) => (gap ? gap : "2rem")};
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;

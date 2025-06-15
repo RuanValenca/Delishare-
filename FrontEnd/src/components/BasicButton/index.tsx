@@ -13,6 +13,7 @@ interface ButtonProps {
   bgColorHover?: string;
   borderColor?: boolean;
   disabled?: boolean;
+  gap?: string;
   onClick?: () => void;
 }
 
@@ -28,10 +29,12 @@ export default function Button({
   bgColorHover,
   borderColor,
   disabled = false,
+  gap = "2rem",
   onClick,
 }: ButtonProps) {
   return (
     <S.Button
+      gap={gap}
       borderColor={borderColor}
       iconColorHover={iconColorHover}
       bgColorHover={bgColorHover}
