@@ -1,4 +1,5 @@
 <?php
+// app/Providers/AppServiceProvider.php
 
 namespace App\Providers;
 
@@ -11,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Aqui você pode registrar services no container
     }
 
     /**
@@ -19,6 +20,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Aqui você pode executar código na inicialização do app
     }
 }
